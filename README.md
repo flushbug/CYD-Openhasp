@@ -1,14 +1,15 @@
 # CYD-Openhasp
 
-Small project to collect https://www.openhasp.com/ based Screens on cheap EPS32 Display "CYD" and Home Assistant.
+Small project to cisplay Home energy data  and Control of PV based EV Charge Controller mode http://evcc.io/ on cheap EPS32 Display "CYD" via Home Assistant.
 Communication is done via MQTT (has to be installed/configured on HA).
-Disclaimer : This is fast and straight forward implementation. For sure there might be much smarter solution but it works.
-Main focus was low coding need no need to setup a complex build environment for ESP32 etc.
+
+Disclaimer : This is fast, quick&dirty straight forward implementation. For sure there might be much smarter solution but it works.
+Main focus was low coding need and no need to setup a complex build environment for ESP32.
 With deeper knowledge of Openhasp/EVCC there might be also a way to get rid of the Home Assistant bypass.
 
 In general any Feedback is highly welcome.
 
-Example : Display of Home energy values + Control of PV based EV Charge Controller http://evcc.io/
+Example : 
 
 ![IMG_6280](https://github.com/user-attachments/assets/fb8e2cf4-05e3-47e7-a053-e1133fd6aaa4)
 
