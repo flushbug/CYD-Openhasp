@@ -1,6 +1,6 @@
 # CYD-Openhasp
 
-Small project to display Home energy data and Control EV Charge Controller mode http://evcc.io/ on cheap EPS32 Display "CYD" via Home Assistant.
+Small project to display Home energy data and Control EV Charge Controller mode http://evcc.io/ on cheap EPS32 Display "Cheap-Yellow-Display" via Home Assistant.
 Communication is done via MQTT (has to be installed/configured on HAOS).
 
 Disclaimer : This is a fast, quick&dirty straight forward implementation. For sure there might be much smarter solution but it works.
