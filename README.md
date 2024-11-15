@@ -85,7 +85,8 @@ mqtt: #connection to EVCC
       json_attributes_topic: "evcc/loadpoints/1/mode"
       json_attributes_template: >
         {"chargemode":"{{value}}"}
-  - sensor:
+
+  - sensor: #capture EVCC buttonstate on Openhasp Display
       name: "openhaspEVCCmode"
       state_topic: "hasp/plate/state/p1b12"
       json_attributes_topic: "hasp/plate/state/p1b12"
