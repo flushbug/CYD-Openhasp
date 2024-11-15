@@ -53,17 +53,7 @@ mqtt: #connection to EVCC
   - sensor:
       name: "PV Leistung Gesamt"
       state_topic: "evcc/site/pvPower"
-      unit_of_measurement: "W"
-
-  - sensor:
-      name: "PV Leistung Dach"
-      state_topic: "evcc/site/pv/1/power"
-      unit_of_measurement: "W"
-
-  - sensor:
-      name: "PV Leistung Garage"
-      state_topic: "evcc/site/pv/2/power"
-      unit_of_measurement: "W"
+      unit_of_measurement: "W
 
   - sensor:
       name: "Ladezustand Pv Batterie"
