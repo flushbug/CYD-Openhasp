@@ -2,6 +2,11 @@
 
 Small project to collect https://www.openhasp.com/ based Screens on cheap EPS32 Display "CYD" and Home Assistant.
 Communication is done via MQTT (has to be installed/configured on HA).
+Disclaimer : This is fast and straight forward implementation. For sure there might be much smarter solution but it works.
+Main focus was low coding need no need to setup a complex build environment for ESP32 etc.
+With deeper knowledge of Openhasp/EVCC there might be also a way to get rid of the Home Assistant bypass.
+
+In general any Feedback is highly welcome.
 
 Example : Display of Home energy values + Control of PV based EV Charge Controller http://evcc.io/
 
@@ -13,9 +18,9 @@ Needed configuration Steps :
 2. Install openhasp (Serial flasher over USB out of the browser. Details on https://www.openhasp.com/0.7.0/firmware/esp32/
 3. Connect via Http/Browser to openhasp "plate" device and configure/calibrate the display
 4. Configure MQTT on openhasp.
-(5.) In case you are running EVCC somewhere and wish to control it, also establish EVCC->MQTT connection
-6. replace/modify pages.json (example https://github.com/flushbug/CYD-Openhasp/blob/main/pages.jsonl)
-7. To connect to HAOS, install openhasp Integration.
+5. In case you are running EVCC somewhere and wish to control it, also establish EVCC->MQTT connection
+6. replace/modify pages.json with example https://github.com/flushbug/CYD-Openhasp/blob/main/pages.jsonl
+7. To connect to HAOS, install openhasp Integration and establish connection to your device.
 8. Add following code to your configuration.yaml in HAOS and adjust the sensor values to your needs/setup
 The "obj" line will update your HAOS Sensor values on the Display.
 ```
@@ -173,3 +178,5 @@ actions:
         alias: Changing chargemode to now
 mode: single
 ```
+
+Enjoy !
