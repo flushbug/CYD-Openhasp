@@ -1,0 +1,12 @@
+{"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":320,"h":30,"text":"Home Energy Panel","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0}
+{"page":1,"id":2,"obj":"label","x":5,"y":30,"w":310,"h":30,"text":"\uED3E  Grid Power","align":0,"text_font":24,"text_color":"black"}
+{"page":1,"id":3,"obj":"label","x":5,"y":30,"w":310,"h":30,"text":"--- W","align":2, "text_font":24, "text_color":"black"}
+{"page":1,"id":4,"obj":"label","x":5,"y":60,"w":310,"h":30,"text":"\uE2DC  Home Power","align":0,"text_font":24,"text_color":"black"}
+{"page":1,"id":5,"obj":"label","x":5,"y":60,"w":310,"h":30,"text":"--- W","align":2, "text_font":24, "text_color":"black"}
+{"page":1,"id":6,"obj":"label","x":5,"y":90,"w":310,"h":30,"text":"\uEA72  PV Power","align":0,"text_font":24,"text_color":"black"}
+{"page":1,"id":7,"obj":"label","x":5,"y":90,"w":310,"h":30,"text":"--- W","align":2, "text_font":24, "text_color":"black"}
+{"page":1,"id":8,"obj":"label","x":5,"y":120,"w":310,"h":30,"text":"\uF2A2  Battery SoC","align":0,"text_font":24,"text_color":"black"}
+{"page":1,"id":9,"obj":"label","x":5,"y":120,"w":310,"h":30,"text":"--- %","align":2, "text_font":24, "text_color":"black"}
+{"page":1,"id":10,"obj":"label","x":5,"y":150,"w":310,"h":30,"text":"\uE5F1  Charge Power","align":0,"text_font":24,"text_color":"black"}
+{"page":1,"id":11,"obj":"label","x":5,"y":150,"w":310,"h":30,"text":"--- W","align":2, "text_font":24, "text_color":"black"}
+{"page":1,"id":12,"obj":"btnmatrix","x":5,"y":185,"w":310,"h":45,"options":["Off","PV","Min+PV","Now"],"toggle":1,"one_check":1,"bg_opa":0,"pad_inner":5,"border_width":0,"pad_top":0,"pad_bottom":0,"pad_left":0,"pad_right":0}
