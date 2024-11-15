@@ -1,9 +1,9 @@
 # CYD-Openhasp
 
-Small project to cisplay Home energy data  and Control of PV based EV Charge Controller mode http://evcc.io/ on cheap EPS32 Display "CYD" via Home Assistant.
-Communication is done via MQTT (has to be installed/configured on HA).
+Small project to display Home energy data and Control EV Charge Controller mode http://evcc.io/ on cheap EPS32 Display "CYD" via Home Assistant.
+Communication is done via MQTT (has to be installed/configured on HAOS).
 
-Disclaimer : This is fast, quick&dirty straight forward implementation. For sure there might be much smarter solution but it works.
+Disclaimer : This is a fast, quick&dirty straight forward implementation. For sure there might be much smarter solution but it works.
 Main focus was low coding need and no need to setup a complex build environment for ESP32.
 With deeper knowledge of Openhasp/EVCC there might be also a way to get rid of the Home Assistant bypass.
 
@@ -18,7 +18,7 @@ Needed configuration Steps :
 1. get a "CYD" like ESP32-2432S028. See https://www.openhasp.com/0.7.0/hardware/sunton/esp32-8048s0xx/ for more screen sizes.
 2. Install openhasp (Serial flasher over USB out of the browser. Details on https://www.openhasp.com/0.7.0/firmware/esp32/
 3. Connect via Http/Browser to openhasp "plate" device and configure/calibrate the display
-4. Configure MQTT on openhasp.
+4. Configure your MQTT server on openhasp.
 5. In case you are running EVCC somewhere and wish to control it, also establish EVCC->MQTT connection
 6. replace/modify pages.json with example https://github.com/flushbug/CYD-Openhasp/blob/main/pages.jsonl
 7. To connect to HAOS, install openhasp Integration and establish connection to your device.
