@@ -85,6 +85,12 @@ mqtt: #connection to EVCC
       json_attributes_topic: "evcc/loadpoints/1/mode"
       json_attributes_template: >
         {"chargemode":"{{value}}"}
+  - sensor:
+      name: "openhaspEVCCmode"
+      state_topic: "hasp/plate/state/p1b12"
+      json_attributes_topic: "hasp/plate/state/p1b12"
+      json_attributes_template: >
+        {"chargemode":"{{value_json.val}}"} 
 ```
 9. Remote control of http://evcc.io/ charging mode is done via HomeAssistant Automations (Openhasp->HomeAssistant->EVCC)
 Create a new automation with the following code
