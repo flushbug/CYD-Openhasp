@@ -169,5 +169,84 @@ actions:
         alias: Changing chargemode to now
 mode: single
 ```
+11. Push current EVCC charging mode on OpenHasp Button (in case mode was switched via EVCC GUI or other source)
+Add another HomeAssistant Automation with the following yaml code
+```
+alias: EVCC charging mode -> openhasp
+description: EVCC charging mode indicator -> go-E
+triggers:
+  - alias: Capture EVCC mode change
+    entity_id:
+      - sensor.lademodus_wallbox
+    trigger: state
+conditions: []
+actions:
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: sensor.lademodus_wallbox
+            attribute: chargemode
+            state: pv
+        sequence:
+          - alias: Set openhasp Plate Button to 1=PV
+            metadata: {}
+            data:
+              qos: "0"
+              retain: true
+              topic: hasp/plate/command/p1b12.val
+              payload: "1"
+            action: mqtt.publish
+        alias: Chargemode pv
+      - conditions:
+          - condition: state
+            entity_id: sensor.lademodus_wallbox
+            attribute: chargemode
+            state: now
+        sequence:
+          - alias: Set openhasp Plate Button to 3=Now
+            metadata: {}
+            data:
+              qos: "0"
+              retain: true
+              topic: hasp/plate/command/p1b12.val
+              payload: "3"
+            action: mqtt.publish
+        alias: Chargemode now
+      - conditions:
+          - condition: state
+            entity_id: sensor.lademodus_wallbox
+            attribute: chargemode
+            state: "off"
+            alias: Chargemode off
+        sequence:
+          - alias: Set openhasp Plate Button to 0=Off
+            metadata: {}
+            data:
+              qos: "0"
+              retain: true
+              topic: hasp/plate/command/p1b12.val
+              payload: "0"
+            action: mqtt.publish
+        alias: Chargemode off
+      - conditions:
+          - alias: Chargemode minpv
+            condition: state
+            entity_id: sensor.lademodus_wallbox
+            attribute: chargemode
+            state: minpv
+        sequence:
+          - alias: Set openhasp Plate Button to 2=Min+PV
+            metadata: {}
+            data:
+              qos: "0"
+              retain: true
+              topic: hasp/plate/command/p1b12.val
+              payload: "2"
+            action: mqtt.publish
+        alias: Chargemode minpv
+    default: []
+mode: single
+```
+
 
 Enjoy !
