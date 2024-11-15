@@ -4,7 +4,7 @@ Small project to display Home energy data and Control EV Charge Controller mode 
 Communication is done via MQTT (has to be installed/configured on HAOS).
 
 Disclaimer : This is a fast, quick&dirty straight forward implementation. For sure there might be much smarter solution but it works.
-Main focus was low coding need and no need to setup a complex build environment for ESP32.
+Main focus was low coding and no need to setup a complex build environment for ESP32.
 With deeper knowledge of Openhasp/EVCC there might be also a way to get rid of the Home Assistant bypass.
 
 In general any Feedback is highly welcome.
@@ -15,14 +15,14 @@ Example :
 
 Needed configuration Steps :
 
-1. get a "CYD" like ESP32-2432S028. See https://www.openhasp.com/0.7.0/hardware/sunton/esp32-8048s0xx/ for more screen sizes.
-2. Install openhasp (Serial flasher over USB out of the browser. Details on https://www.openhasp.com/0.7.0/firmware/esp32/
-3. Connect via Http/Browser to openhasp "plate" device and configure/calibrate the display
-4. Configure your MQTT server on openhasp.
-5. In case you are running EVCC somewhere and wish to control it, also establish EVCC->MQTT connection
+1. get a "CYD" like ESP32-2432S028. See https://www.openhasp.com/0.7.0/hardware/sunton/esp32-8048s0xx/ for more screen sizes and options.
+2. Install openhasp (Serial flasher over USB out of the browser. Details on https://www.openhasp.com/0.7.0/firmware/esp32/ 
+4. Connect openhasp to your wifi, access via Http/Browser to openhasp "plate" device and configure/calibrate the display
+5. Configure your MQTT server on openhasp.
 6. replace/modify pages.json with example https://github.com/flushbug/CYD-Openhasp/blob/main/pages.jsonl
 7. To connect to HAOS, install openhasp Integration and establish connection to your device.
-8. Add following code to your configuration.yaml in HAOS and adjust the sensor values to your needs/setup
+8.. In case you are running EVCC somewhere and wish to control it, also establish EVCC->MQTT connection
+9. Add following code to your configuration.yaml in HAOS and adjust the sensor values to your needs/setup
 The "obj" line will update your HAOS Sensor values on the Display.
 ```
 openhasp:
@@ -99,8 +99,8 @@ mqtt: #connection to EVCC
       json_attributes_template: >
         {"chargemode":"{{value_json.val}}"} 
 ```
-9. Remote control of http://evcc.io/ charging mode is done via HomeAssistant Automations (Openhasp->HomeAssistant->EVCC)
-Create a new automation with the following code
+10. Remote control of http://evcc.io/ charging mode is done via HomeAssistant Automations (Openhasp->HomeAssistant->EVCC)
+Create a new automation based on the following yaml code
 ```
 alias: OpenHaspDisplay EVCC Mode Change
 description: ""
